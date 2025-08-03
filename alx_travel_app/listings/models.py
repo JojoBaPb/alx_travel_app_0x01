@@ -15,6 +15,7 @@ class Listing(models.Model):
 class Booking(models.Model):
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='bookings')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    guest_name = models.CharField(max_length=255)
     start_date = models.DateField()
     end_date = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
